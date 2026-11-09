@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f3f5f7;
+  background: #101923;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.scene-copy {
+  position: absolute;
+  z-index: 1;
+  top: 34px;
+  left: 40px;
+  pointer-events: none;
+  text-shadow: 0 2px 18px rgb(0 0 0 / 40%);
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+  color: #9eb4c6;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+h1 {
+  margin: 0;
+  color: #f3f5f7;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.help {
+  margin: 10px 0 0;
+  color: #c4cdd5;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.help span,
+.scene-caption span {
+  margin: 0 6px;
+  color: #ff9a42;
+}
+
+.crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 5px;
+  height: 5px;
+  border: 1px solid rgb(255 255 255 / 90%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgb(0 0 0 / 65%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.scene-caption {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  z-index: 1;
+  color: #d3dae0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .scene-copy {
+    top: 24px;
+    left: 22px;
+    right: 22px;
+  }
+
+  .help {
+    max-width: 260px;
+    line-height: 1.7;
+  }
+
+  .scene-caption {
+    right: 22px;
+    bottom: 20px;
+  }
+}
